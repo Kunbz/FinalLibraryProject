@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+	<meta name="viewport" content="width=device-width,
+	initial-scale=1, shrink-to-fit=no" />
+	<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/boots
+	trap.min.css" />
+	 <title>The Librarian</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+
+	</head>
+	<body>
+
+ 		<input id="studentName" type="text" placeholder ="Enter Name">
+ 		<select id="bookName" onchange="displayImages()"> <!-- optipn dropdown to affect image -->
+ 			<option selected="selected">
+ 				Books
+ 			</option>
+ 		</select> <!-- subject to change to a button that drops down and show the books in the library -->
+
+		<input type="button" onclick="updateInfo()" value="Check Out"> <!-- this means that when the students click on check out it shows(name/ time/ title of book)also you have to define update info
+		 -->
+		<input type="button" onclick="updateReturn()" value="Return">
+		<br>
+
+		<input id="newBook" type="text" placeholder=" Enter New Book">
+		<input type="button" onclick="updateAdd()" value ="Add">
+		
+		<ul id="display"></ul>  <!-- this is to display information on the webpage -->
+		<img id="displayImage" src="">
+		<!-- <ul id="displayImages"></ul> -->
+		<!-- <div id="container">
+			<div class="backgroundImage">
+				<ul>display</ul> -->
+			<!-- </div>
+
+ -->
+ 			<div class="container">
+			<img src="ImagesForBooks/images.jpeg">
+				</div>
+
+			<!-- <div class="container">
+			<img src="something2.png">
+					</div> -->
+		 <script src="script.js"></script>
+	</body>
+
+</html>
+
+
+
+<!-- Rowenas Library Requirements-->
+<!-- it should keep track of how many books are currently in the library -->
+<!-- it should have a visual cue if the lib inventory that includes who /when/ qty -->
+<!-- it should check out a book while documenting the quantity of books taken by "name " of student-->
+<!-- make drop downlists for books and qty .. they should be beside each other -->
+<!-- make a button for name of books that shows the books / makes a student select and also how many(qty) -->
+<!-- sort the books in alphabetical order
+ -->
+<!--  psuedo code -->
+<!-- make input tags for name of student/ time /student checks out also print the time.
+if possible a visual of what the book looks like  -->
+
+<!-- make a funtion for books that give you name of book/ title, quantity, when the book was added or removed and returned into the library, also make a function for the chekout button/ return and borrow
+
+ make an object that gives you name of student, title of book, date and time / quantity of book taken by the student -->
+ <!-- name of book
+      students name 
+      qty of books per person
+      time the book was taken
+	add more to the list of books in the library
+
+ -->
+
+
+ <!-- create a function that allows the user to add books that include title , author, and a button ti change the read status to yes or no
+// have a statement that says when you take out one book the qty drops
+		 
+ -->
+<!-- for the function that adds and remove
+you will need a condition that shows if stdent a removes "book" reduce qty to amount student reduces by and show// make a limit of 1 book per student
+alert prompt for remove and add -->
+ <!-- how do you determine if the student has read the book for the yes/no -->
