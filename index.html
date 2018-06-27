@@ -1,56 +1,78 @@
 <!DOCTYPE html>
 	<html>
 	<head>
-	<meta name="viewport" content="width=device-width,
-	initial-scale=1, shrink-to-fit=no" />
-	<link rel="stylesheet"
+		<title>The Librarian</title>
+
+		<meta name="viewport" content="width=device-width,
+	initial-scale=1, shrink-to-fit=no"/>
+		<link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/boots
 	trap.min.css" />
-	 <title>The Librarian</title>
+	 
 	<link rel="stylesheet" type="text/css" href="styles.css">
+	<link href='https://fonts.googleapis.com/css?family=Dancing Script' rel='stylesheet'>
+
 
 	</head>
+
 	<body>
 
- 		<input id="studentName" type="text" placeholder ="Enter Name">
- 		<select id="bookName" onchange="displayImages()"> <!-- optipn dropdown to affect image -->
- 			<option selected="selected">
- 				Books
- 			</option>
- 		</select> <!-- subject to change to a button that drops down and show the books in the library -->
+				<div class="container-fluid">
+					<div class="page-header">
+						<h1 class="mt-4 pt-4"> <strong>Sophia's Online Book Library</h1>	
+					</div>
 
-		<input type="button" onclick="updateInfo()" value="Check Out"> <!-- this means that when the students click on check out it shows(name/ time/ title of book)also you have to define update info
-		 -->
-		<input type="button" onclick="updateReturn()" value="Return">
-		<br>
+    				<div class="container">
+    					<nav class="navbar navbar-default">
+    						<div class="row">
 
-		<input id="newBook" type="text" placeholder=" Enter New Book">
-		<input type="button" onclick="updateAdd()" value ="Add">
-		
-		<ul id="display"></ul>  <!-- this is to display information on the webpage -->
-		<img id="displayImage" src="">
-		<!-- <ul id="displayImages"></ul> -->
-		<!-- <div id="container">
-			<div class="backgroundImage">
-				<ul>display</ul> -->
-			<!-- </div>
+    							<div class="col">
+    								<img id="displayImage" src=""> <!-- this affects the images of the books in the js -->
+    							</div>
+    							<div class="col">
+    								<input id="studentName" type="text" placeholder ="Enter Student Name" class="mt-3 col-12"> <!--to affect image --> <!--  optipn dropdor the enter name -->
+									<select id="bookName" onchange="displayImages()" class="mt-3"> 
+										<option selected="selected">
+											Books
+										</option>
+	 									<ul class="nav navbar-nav navbar-right">
+	      									<li class="dropdown">
+	        								<a class="dropdown-toggle" data-toggle="dropdown" href="#"> Book Name </a></li>
+		        								
+	    								</ul>
 
- -->
- 			<div class="container">
-			<img src="ImagesForBooks/images.jpeg">
+									</select> <!-- subject to change to a button that drops down and show the books in the library
+	 -->	
+									<input type="button" onclick="updateInfo()" value="Check Out" button type="submit" class="btn btn-warning mt-3 ">
+			 						<!-- this means that when the students click on check out it shows(name/ time/ title of book)also you have to define update info/ aka checkout
+			 -->
+	 								<input type="button" onclick="updateReturn()" value="Return"button type="submit" class="btn btn-warning mt-3">  <!-- this is for the return button -->
+									<br>
+
+									<input id="newBook" type="text" placeholder=" Enter New Book Title" class="mt-3 col-12"> <!-- this is for the newbook placeholder -->
+									<br>
+									<input type="button" onclick="updateAdd()" value ="Add" button type="submit" class="btn btn-warning mt-3"> <!-- this is for the add button -->
+			
+									<ul id="display" style="background-color:rgb(255,255,255,0.5);"></ul>  <!-- this is to display information on the webpage, this is for the checkout text that says sophia did, also 0.5 refers to the opacity -->
+    							</div>
+
+								
+
+								
+							</div>
+				
+						</nav>			
+					</div>
+
 				</div>
-
-			<!-- <div class="container">
-			<img src="something2.png">
-					</div> -->
-		 <script src="script.js"></script>
+		 	<script src="script.js"></script>  <!-- link javascript -->
 	</body>
 
 </html>
 
 
 
-<!-- Rowenas Library Requirements-->
+<!-- Sophia's Library Requirements-->
 <!-- it should keep track of how many books are currently in the library -->
 <!-- it should have a visual cue if the lib inventory that includes who /when/ qty -->
 <!-- it should check out a book while documenting the quantity of books taken by "name " of student-->

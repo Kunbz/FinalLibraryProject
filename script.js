@@ -23,8 +23,8 @@ var namesOfBooks =[
 	{name:"Things Fall Apart by Chinua Adichie", qty:15, image:"ImagesForBooks/9780141186887.jpg"}
 ];  //hold 21 names of books// should not be empty
 		
-		var select=document.getElementById("bookName");
-		for(var i=0; i<namesOfBooks.length; i++){
+		var select=document.getElementById("bookName"); // used the id book name to affect the id
+		for(var i=0; i<namesOfBooks.length; i++){ //this is a forloop goimg through the array
 		   var el= document.createElement("option");// i used the option element because i am trying to make options
 			el.textContent=namesOfBooks[i].name;// the .name is cause im trying to get the names in the object
 			el.value = namesOfBooks[i].name;
@@ -32,11 +32,11 @@ var namesOfBooks =[
 		 }
 
 
-		function updateInfo(){
+		function updateInfo(){ // this is for checkout 
 				var name = document.getElementById("studentName").value;
 				var title = document.getElementById("bookName").value;
 				for (var i=0; i<namesOfBooks.length; i++){
-					if (title==namesOfBooks[i].name) {
+					if (title==namesOfBooks[i].name) { //this is basically comparing the title and the name ==
 						if (namesOfBooks[i].qty >0) {
 							namesOfBooks[i].qty-- //once a student takes a book / reduce qty of book in the library
 							var student = {
@@ -48,7 +48,7 @@ var namesOfBooks =[
 							document.getElementById("display").innerHTML += "<li>" + student.name + " has taken " + student.book + " at " + student.time + " from the library " + "</li>";
 						}
 						else{ // means theres no condition
-							document.getElementById("display").innerHTML += "Book is unavailable";
+							document.getElementById("display").innerHTML += "Book is unavailable" + "<br>";
 						}
 						break; // stop looping through the array
 					}
@@ -62,7 +62,7 @@ var namesOfBooks =[
 				var title = document.getElementById("bookName").value;
 				var studentIndex;
 				for(var i= 0; i<namesOfStudents.length; i++){
-					if(title==namesOfStudents[i].book && namesOfStudents[i].name==name){
+					if(title==namesOfStudents[i].book && namesOfStudents[i].name==name){ //comparing 
 						studentIndex=i; //i means the index you want to start from
 
 						break; // end loop
@@ -71,11 +71,16 @@ var namesOfBooks =[
 
 				}
 
-				var student = namesOfStudents.splice(studentIndex,1)
+				if(studentIndex == undefined){
+					document.getElementById("display").innerHTML = 'does not have the book'; //if student doesnt have the book print out this message/ student can retiurn book they havet taken
+				}else{
+					var student = namesOfStudents.splice(studentIndex,1) //basically deletes
 				// console.log(student)
 				
-				document.getElementById("display").innerHTML += "<li>" + student[0].name + " has returned " + student[0].book + " at " + student[0].time + " to the library " + "</li>";
+					document.getElementById("display").innerHTML += "<li>" + student[0].name + " has returned " + student[0].book + " at " + student[0].time + " to the library " + "</li>";
 			
+				}
+				
 
 				
 			}
@@ -88,8 +93,7 @@ var namesOfBooks =[
 
 				}
 				namesOfBooks.push(newBook)
-			    document.getElementById("display").innerHTML += "<li>" + " Sophia has added " + newBook.name +"with"+ newBook.qty
-			    + " at " + new Date().toString() + " to the library " + "</li>";
+			    document.getElementById("display").innerHTML += "<li>" + " Sophia added " + newBook.name + " at " + new Date().toString() + " to the library " + "</li>";
 
 			    var el= document.createElement("option");// i used the option element because i am trying to make options
 				el.textContent=newBook.name;// the .name is cause im trying to get the names in the object

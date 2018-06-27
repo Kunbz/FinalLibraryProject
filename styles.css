@@ -1,15 +1,19 @@
-/*body{
-	background-image: url("ImagesForBooks/images.jpeg");
-	height:100px;
-	}
-*/
- .container {
-    width: 200px;
-    height: 120px;
-	}
 
-/* resize images */
- .container img {
-    	width: 100%;
-    	height: auto;
-			}
+h1{
+
+	height: 70px;
+	text-align: center;
+	width: 
+	margin: 2%;	
+	color: orange;
+	
+	
+}
+
+body {
+    font-family:'Dancing Script';
+    font-size: 22px;
+    background-image: url("./ImagesForBooks/bookscloseup.jpg");
+    background-size: cover;
+}
+
