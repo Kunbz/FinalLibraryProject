@@ -45,7 +45,7 @@ var namesOfBooks =[
 								book:title
 							}
 							namesOfStudents.push(student)// pushing the student(object) into the student array
-							document.getElementById("display").innerHTML += "<li>" + student.name + " has taken " + student.book + " at " + student.time + " from the library " + "</li>";
+							document.getElementById("display").innerHTML += "<br>" + student.name + " has taken " + student.book + " at " + student.time + " from the library ";
 						}
 						else{ // means theres no condition
 							document.getElementById("display").innerHTML += "Book is unavailable" + "<br>";
@@ -72,12 +72,12 @@ var namesOfBooks =[
 				}
 
 				if(studentIndex == undefined){
-					document.getElementById("display").innerHTML = 'does not have the book'; //if student doesnt have the book print out this message/ student can retiurn book they havet taken
+					document.getElementById("display").innerHTML += "<br>" + name +" "+ 'does not have the book'; //if student doesnt have the book print out this message/ student can retiurn book they havet taken
 				}else{
 					var student = namesOfStudents.splice(studentIndex,1) //basically deletes
 				// console.log(student)
 				
-					document.getElementById("display").innerHTML += "<li>" + student[0].name + " has returned " + student[0].book + " at " + student[0].time + " to the library " + "</li>";
+					document.getElementById("display").innerHTML += "<br>" + student[0].name + " has returned " + student[0].book + " at " + student[0].time + " to the library ";
 			
 				}
 				
@@ -93,7 +93,7 @@ var namesOfBooks =[
 
 				}
 				namesOfBooks.push(newBook)
-			    document.getElementById("display").innerHTML += "<li>" + " Sophia added " + newBook.name + " at " + new Date().toString() + " to the library " + "</li>";
+			    document.getElementById("display").innerHTML += "<br>" + " Sophia added " + newBook.name + " at " + new Date().toString() + " to the library ";
 
 			    var el= document.createElement("option");// i used the option element because i am trying to make options
 				el.textContent=newBook.name;// the .name is cause im trying to get the names in the object
